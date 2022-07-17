@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  desktop:
+    image: docker-desktop:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: docker-desktop
+    ports:
+      - 5900:5900
+      - 6080:6080
+    volumes:
+      - userhome:/root
+
+volumes:
+  userhome:
